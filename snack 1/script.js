@@ -33,7 +33,24 @@ const bici = [
         peso : 3,
     },
     {
-        nome : "bici 1",
+        nome : "bici 8",
         peso : 5,
     },
-]
+];
+
+let biciLeggera = bici[0].nome;
+let pesoMinore = bici[0].peso;
+
+function calcolaPeso() {
+    for (let i = 0; i < bici.length; i++) {
+        if(pesoMinore > bici[i].peso){
+            pesoMinore = bici[i].peso;
+            biciLeggera = bici[i].nome;
+        }   
+    }
+    return pesoMinore , biciLeggera;
+}
+
+calcolaPeso();
+console.log(`La bici più leggera è la ${biciLeggera} con un peso di ${pesoMinore} kg`);
+
